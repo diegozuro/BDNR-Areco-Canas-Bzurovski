@@ -1,0 +1,130 @@
+{
+	"info": {
+		"_postman_id": "8b9ebef9-0c36-4b46-9451-3efa271422a1",
+		"name": "BDNR",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3892/users?id=62bbacb8c1a0d6472873face",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3892",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "62bbacb8c1a0d6472873face"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user_name\": \"diegozuro\",\n    \"email\": \"admin123\",\n    \"password\": \"admin@gmail.com\",\n    \"first_name\": \"diego\",\n    \"last_name\": \"zuro\",\n    \"birthday\":\"2000-08-26\",\n    \"language\": \"Spanish\",\n    \"country\": \"Uruguay\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3892/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3892",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vehicle Info",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"waves\": 1.0,\n    \"temperature\": 1.0,\n    \"vibration\": 1.0,\n    \"voltage\": 1.0,\n    \"speed\": 1.0,\n    \"pressure\": 3.0,\n    \"current_time\":\"2000-08-26\"\n}    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/vehicles-info/15/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehicles-info",
+						"15",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3892/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3892",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vechile Info",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/vehicles-info",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"vehicles-info"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
