@@ -1,5 +1,5 @@
 const cassandra = require("cassandra-driver");
-const { VehicleInfoConfig, createVehicleInfoTableQuery } = require("./vehicleInfoModel");
+const { createVehicleInfoTableQuery } = require("./vehicleInfoTable");
 
 const client = new cassandra.Client({
   contactPoints: process.env.CONTACT_POINTS
@@ -8,18 +8,6 @@ const client = new cassandra.Client({
   localDataCenter: process.env.CASSANDRA_LOCAL_DATA_CENTER || "datacenter1",
   keyspace: process.env.CASSANDRA_KEYSPACE || "bdnr",
 });
-
-const mappingOptions = {
-  models: {
-    vehicle_information: VehicleInfoConfig,
-  },
-};
-
-const mapper = new cassandra.mapping.Mapper(client, {
-  mappingOptions,
-});
-
-const VehicleInformation = mapper.forModel("vehicle_information");
 
 const config = async () => {
   try {
@@ -31,4 +19,4 @@ const config = async () => {
   }
 };
 
-module.exports = { VehicleInformation,  config };
+module.exports = { config, client };

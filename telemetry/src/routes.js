@@ -4,7 +4,7 @@ const VehicleInfoController = require('./vehicleInfoController');
 const router = express.Router();
 const vehicleInfoController = new VehicleInfoController();
 
-router.post('/:vehicleInfoId', function (req, res) {
+router.post('/:vehicleInfoId/new', function (req, res) {
   vehicleInfoController.createVehicleInformation(req, res);
 });
 
